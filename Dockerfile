@@ -5,7 +5,7 @@ RUN apk add --no-cache g++ make qt5-qtbase-dev qt5-qttools-dev wget zip
 ENV PATH="$PATH:/usr/lib/qt5/bin"
 
 # Build LibrePCB
-ARG LIBREPCB_VERSION=0.1.1
+ARG LIBREPCB_VERSION=0.1.2
 RUN wget "https://download.librepcb.org/releases/$LIBREPCB_VERSION/librepcb-$LIBREPCB_VERSION-source.zip"
 RUN unzip "./librepcb-$LIBREPCB_VERSION-source.zip"
 WORKDIR "./librepcb-$LIBREPCB_VERSION"
