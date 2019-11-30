@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+# LibrePCB CLI requires a running X server, as explained in documentation:
+#   https://docs.librepcb.org/#cli-headless
+xvfb-run -a /opt/librepcb/bin/librepcb-cli "$@"
