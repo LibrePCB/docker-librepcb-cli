@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 
 # Install APT packages
 # Note: git is actually not needed in this image, but it might be useful for

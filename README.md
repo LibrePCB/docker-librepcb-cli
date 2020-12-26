@@ -14,7 +14,7 @@ is hosted at [Docker Hub](https://hub.docker.com/r/librepcb/librepcb-cli/).
 
 ## Details
 
-The image is based on Ubuntu 18.04 and has the `librepcb-cli` executable set
+The image is based on Ubuntu 20.04 and has the `librepcb-cli` executable set
 as entrypoint. The working directory is set to `/work` (which is empty).
 
 
