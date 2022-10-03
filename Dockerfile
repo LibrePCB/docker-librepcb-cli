@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM ubuntu:22.04
 
 # Install APT packages
 # Note: git is actually not needed in this image, but it might be useful for
@@ -9,7 +9,7 @@ RUN apt-get update -q && apt-get -y -q install --no-install-recommends \
   && rm -rf /var/lib/apt/lists/*
 
 # Install LibrePCB CLI
-ARG LIBREPCB_VERSION=0.1.6
+ARG LIBREPCB_VERSION=0.1.7
 RUN wget "https://download.librepcb.org/releases/$LIBREPCB_VERSION/librepcb-$LIBREPCB_VERSION-linux-x86_64.tar.gz" \
   && mkdir /opt/librepcb \
   && tar -xvzf librepcb-$LIBREPCB_VERSION-linux-x86_64.tar.gz -C /opt/librepcb --strip-components=1 \
