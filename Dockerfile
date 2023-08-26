@@ -3,7 +3,7 @@ FROM ubuntu:22.04
 # Install APT packages
 # Note: git is actually not needed in this image, but it might be useful for
 # users to have it installed (to clone/push/diff projects or libraries).
-ENV DEBIAN_FRONTEND=noninteractive
+ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get update -q && apt-get -y -q install --no-install-recommends \
     ca-certificates git libfontconfig1 libglib2.0-0 libglu1-mesa wget xvfb \
   && rm -rf /var/lib/apt/lists/*
