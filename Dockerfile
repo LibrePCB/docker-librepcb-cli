@@ -1,5 +1,11 @@
 FROM ubuntu:22.04
 
+# Make sure UTF-8 characters printed by librepcb-cli are displayed properly.
+# For a different language of the output of librepcb-cli, the environment
+# variable LANG can be overridden at container runtime with the '-e' flag.
+# Note: Not using LC_ALL since it leads to a runtime warning printed to stderr.
+ENV LANG=C.UTF-8
+
 # Install APT packages
 # Note: git is actually not needed in this image, but it might be useful for
 # users to have it installed (to clone/push/diff projects or libraries).
