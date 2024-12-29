@@ -1,4 +1,4 @@
-FROM ubuntu:22.04
+FROM ubuntu:24.04
 
 # Make sure UTF-8 characters printed by librepcb-cli are displayed properly.
 # For a different language of the output of librepcb-cli, the environment
@@ -11,7 +11,7 @@ ENV LANG=C.UTF-8
 # users to have it installed (to clone/push/diff projects or libraries).
 ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get update -q && apt-get -y -q install --no-install-recommends \
-    ca-certificates git libfontconfig1 libglib2.0-0 libglu1-mesa wget xvfb \
+    ca-certificates git libegl1 libfontconfig1 libglib2.0-0 libglu1-mesa wget xvfb \
   && rm -rf /var/lib/apt/lists/*
 
 # Install LibrePCB CLI
