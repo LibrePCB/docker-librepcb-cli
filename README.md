@@ -30,7 +30,7 @@ Mount your LibrePCB project or library to `/work` and pass the LibrePCB CLI
 arguments to `docker run`:
 
 ```bash
-docker run -it --rm -v `pwd`:/work librepcb/librepcb-cli open-project --help
+docker run -it --rm -v `pwd`:/work librepcb/librepcb-cli:2.0.0 open-project --help
 ```
 
 
