@@ -11,7 +11,7 @@ ENV LANG=C.UTF-8
 # users to have it installed (to clone/push/diff projects or libraries).
 ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get update -q && apt-get -y -q install --no-install-recommends \
-    ca-certificates git libegl1 libfontconfig1 libglib2.0-0 libglu1-mesa wget xvfb \
+    ca-certificates git libegl1 libfontconfig1 libglib2.0-0 libglu1-mesa wget \
   && rm -rf /var/lib/apt/lists/*
 
 # Install LibrePCB CLI
@@ -26,7 +26,7 @@ RUN wget "https://download.librepcb.org/releases/$LIBREPCB_VERSION/librepcb-$LIB
 # directory when mounting a volume to this path
 WORKDIR /work
 
-# Add wrapper around librepcb-cli to get it run with xvfb-run
+# Add wrapper around librepcb-cli
 ADD librepcb-cli /usr/local/bin/librepcb-cli
 
 # Check if the librepcb-cli works as expected
