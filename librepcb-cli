@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-
-# Since LibrePCB 2.2.0, librepcb-cli runs headlessly on its own, so no
-# X server / xvfb-run wrapper is needed anymore.
-exec /opt/librepcb/bin/librepcb-cli "$@"

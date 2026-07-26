@@ -20,14 +20,12 @@ RUN wget "https://download.librepcb.org/releases/$LIBREPCB_VERSION/librepcb-$LIB
   && mkdir /opt/librepcb \
   && tar -xvzf librepcb-$LIBREPCB_VERSION-linux-x86_64.tar.gz -C /opt/librepcb --strip-components=1 \
   && rm librepcb-$LIBREPCB_VERSION-linux-x86_64.tar.gz \
-  && rm /opt/librepcb/bin/librepcb
+  && rm /opt/librepcb/bin/librepcb \
+  && ln -s /opt/librepcb/bin/librepcb-cli /usr/local/bin/librepcb-cli
 
 # Set working directory to /work so users don't have to change the working
 # directory when mounting a volume to this path
 WORKDIR /work
-
-# Add wrapper around librepcb-cli
-ADD librepcb-cli /usr/local/bin/librepcb-cli
 
 # Check if the librepcb-cli works as expected
 RUN librepcb-cli --version
