@@ -17,11 +17,9 @@ RUN apt-get update -q && apt-get -y -q install --no-install-recommends \
 # Install LibrePCB CLI
 ARG LIBREPCB_VERSION=2.1.1
 RUN wget "https://download.librepcb.org/releases/$LIBREPCB_VERSION/librepcb-$LIBREPCB_VERSION-linux-x86_64.tar.gz" \
-  && mkdir /opt/librepcb \
-  && tar -xvzf librepcb-$LIBREPCB_VERSION-linux-x86_64.tar.gz -C /opt/librepcb --strip-components=1 \
+  && tar -xvzf librepcb-$LIBREPCB_VERSION-linux-x86_64.tar.gz -C /usr/local --strip-components=1 \
   && rm librepcb-$LIBREPCB_VERSION-linux-x86_64.tar.gz \
-  && rm /opt/librepcb/bin/librepcb \
-  && ln -s /opt/librepcb/bin/librepcb-cli /usr/local/bin/librepcb-cli
+  && rm /usr/local/bin/librepcb
 
 # Set working directory to /work so users don't have to change the working
 # directory when mounting a volume to this path
